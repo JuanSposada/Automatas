@@ -6,7 +6,15 @@ with open('json_example.json', 'r') as file:
 # imprimir el contenido del carchivo caracter por caracter
 def show_content(file):
     for character in file:
-        print(character)
+        if character =='\n':
+            print('[Enter]')
+        elif character == '\t':
+            print('[Tab]')
+        elif character == ' ':
+            print('[Espacio]')
+        else:
+            print(character)
+        
 
 
 def is_json(file):

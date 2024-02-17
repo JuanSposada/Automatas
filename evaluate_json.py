@@ -23,4 +23,17 @@ def is_json(file):
                 return True
             
 
+
+
 print(show_content(content))
+
+def set_tokens():
+    tokens = {}
+    with open('token.txt', 'r') as file:
+        for line in file:
+            key, value = line.split("\t")
+            tokens[key] = value
+            return tokens
+            
+tokens = set_tokens()
+print(tokens)

@@ -44,4 +44,5 @@ def main():
     show_content_tokens(file, tokens)
     write_document(file, tokens)
 
-main()
+if '__name__' == '__main__':
+    main()

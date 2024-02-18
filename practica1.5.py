@@ -33,7 +33,12 @@ def show_content_tokens(file,tokens):
 def write_document(file, tokens):
     with open('salida.txt', 'w') as output:
         for character in file:
-            output.write(f'{tokens[character]}={character}\n')
+            if character == chr(10):
+                output.write(f'{tokens[character]}=[ENTER]\n')
+            elif character == chr(32):
+                output.write(f'{tokens[character]}=[SPACE]\n')
+            else:
+                output.write(f'{tokens[character]}={character}\n')
         return output
         
         
@@ -45,5 +50,5 @@ def main():
     show_content_tokens(file, tokens)
     write_document(file, tokens)
 
-if '__name__' == '__main__':
+if __name__ == '__main__':
     main()

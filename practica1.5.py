@@ -38,7 +38,7 @@ def write_document(file, tokens):
         
         
 
-
+# Definicion de la funcion main
 def main():
     file = read_file('json_example.json')
     tokens = tokenize_content(file)

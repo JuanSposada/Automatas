@@ -29,6 +29,7 @@ def show_content_tokens(file,tokens):
         else:
             print(f'{tokens[character]}={character}')
 
+# Esta funcion escribe en un archivo salida.txt los tokens y caracteres
 def write_document(file, tokens):
     with open('salida.txt', 'w') as output:
         for character in file:

@@ -67,6 +67,15 @@ def tokenize_string(array):
             tokens.append(value)
     return tokens
 
+def is_string(array):
+    flag = True 
+    for value in array:
+        if value == 34:
+            flag = not flag
+            print(flag)
+    if flag == False:
+        print("ERROR: las comillas no se cerraron")
+        exit();
 
 
 
@@ -82,7 +91,7 @@ def main():
     print(tokens_array)
     group_string = tokenize_string(tokens_array)
     print(group_string)
-    
+    print(is_string(tokens_array))
 
 
 

@@ -1,8 +1,11 @@
-# Practica 2
-# Agrupar segun reglas json
-# Cadena de caracteres y asignarles un token
+#!/usr/bin/env python3
 #
-
+# --Json Linter--
+# Juan Sebastian Moreno Posada
+# al22760047.AT.ite.DOT.edu.DOT.mx
+# Apr/1/2024
+#
+#
 
 tokens_array = []
 tokens_string =[]
@@ -77,9 +80,9 @@ def tokenize_int(array):
             if not agrupados:
                 tokens.append(201)
                 agrupados = True
-            else: 
-                agrupados = False
-                tokens.append(value)
+        else: 
+            agrupados = False
+            tokens.append(value)
     return tokens
 
 
@@ -105,12 +108,13 @@ def main():
     print(tokens_array)
     tokenize_string(tokens_array)
     show_content_tokens(file, tokens)
-
     write_document(file, tokens)
     print(tokens_array)
+    print(is_string(tokens_array))
     group_string = tokenize_string(tokens_array)
     print(group_string)
-    print(is_string(tokens_array))
+    group_int = tokenize_int(group_string)
+    print(group_int)
 
 
 

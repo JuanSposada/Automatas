@@ -71,17 +71,25 @@ def tokenize_string(array):
             tokens.append(value)
     return tokens
 
-# tokeniza los elementos int
-def tokenize_int(array):
+# tokeniza los elementos tipo numero de un arreglo
+# evalua si es entero o flotante
+def tokenize_number(array):
     tokens = []
-    agrupados = False
+    int_number = False
+    float_number = False
     for value in array:
         if (value >= 48 and value <= 57):
-            if not agrupados:
+            if not int_number and not float_number:
                 tokens.append(201)
-                agrupados = True
+                int_number = True
+        elif (value == 46):
+            if int_number:
+                tokens.pop()
+                tokens.append(202)
+                float_number = True
         else: 
-            agrupados = False
+            int_number = False
+            float_number = False
             tokens.append(value)
     return tokens
 
@@ -113,7 +121,7 @@ def main():
     print(is_string(tokens_array))
     group_string = tokenize_string(tokens_array)
     print(group_string)
-    group_int = tokenize_int(group_string)
+    group_int = tokenize_number(group_string)
     print(group_int)
 
 

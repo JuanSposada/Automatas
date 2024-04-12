@@ -69,16 +69,17 @@ def tokenize_string(array):
     return tokens
 
 # tokeniza los elementos int
-def tokenize_int(array):
+def tokenize_number(array):
     tokens = []
-    agrupados = False
+    int_number = False
+    float_number = False
     for value in array:
         if (value >= 48 and value <= 57):
-            if not agrupados:
+            if not int:
                 tokens.append(201)
-                agrupados = True
+                int = True
             else: 
-                agrupados = False
+                int = False
                 tokens.append(value)
     return tokens
 
@@ -105,7 +106,6 @@ def main():
     print(tokens_array)
     tokenize_string(tokens_array)
     show_content_tokens(file, tokens)
-
     write_document(file, tokens)
     print(tokens_array)
     group_string = tokenize_string(tokens_array)

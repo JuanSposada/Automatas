@@ -93,6 +93,26 @@ def tokenize_number(array):
             tokens.append(value)
     return tokens
 
+# Esta funcion tokeniza los elementos tipo DATE de un arreglo
+def tokenize_date (array):
+    tokens=[]
+    date_token=''
+    is_date = False
+    for value in array:
+        if (value >= 47 and value <= 57 ):
+            date_token += chr(value)
+            if '/' in date_token and not is_date:
+                parts = date_token.split('/')
+                if len(parts) == 3:
+                    tokens.append(203)
+                    is_date = True
+        else:
+            tokens.append(value)
+    return tokens    
+            
+
+
+     
 
 # comprueba que ls string esten cerrados con comilla
 def is_string(array):
@@ -121,8 +141,11 @@ def main():
     print(is_string(tokens_array))
     group_string = tokenize_string(tokens_array)
     print(group_string)
-    group_int = tokenize_number(group_string)
-    print(group_int)
+    group_number = tokenize_number(group_string)
+    print(group_number)
+    group_date = tokenize_date(group_string)
+    print(group_date)
+
 
 
 

@@ -99,7 +99,7 @@ def tokenize_date (array):
     date_token=''
     is_date = False
     for value in array:
-        if (value >= 47 and value <= 57 ):
+        if ( 47 <= value <= 57 ):
             date_token += chr(value)
             if '/' in date_token and not is_date:
                 parts = date_token.split('/')
@@ -110,6 +110,23 @@ def tokenize_date (array):
             tokens.append(value)
     return tokens    
             
+
+def validate_date(array):
+    date_token=''
+    for value in array:
+        if (value>=47 and value <= 57 ):
+            date_token += chr(value)
+            if '/' in date_token:
+                parts = date_token.split('/')
+                if len(parts) == 3:
+                    day, mounth, year = parts
+                    if day.isdigit() and month.isdigit() and year.isdigit():
+                        day = int(day)
+                        month = int(month)
+                        year = int(year)
+                        if 1 <= month <= 12:
+
+
 
 
      

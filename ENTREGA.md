@@ -1,10 +1,10 @@
-# ENTREGA
+# ENTREGA 🎯
 Este archivo contiene las funcionalidades hasta el momento 
 de nuestro programa evaluador de archivos JSON,
 ademas plantea las posibles actualizaciones, ademas las proyecciones
 y alcances del proyecto.
 
-## ¿Que hace nuestro programa?
+## ¿Que hace nuestro programa? ⚙️
 Nuestro Programa hasta el momento, realiza las siguientes tareas:
 
 * Lee un archivo JSON externo. 
@@ -22,7 +22,7 @@ Nuestro Programa hasta el momento, realiza las siguientes tareas:
 * Verifica si un elemento cumple con el formato de tipo 'date'
   y le asigna el token ```203```. 
 
-## ¿Que hace falta?
+## ¿Que hace falta? 📝
 Actualmente el programa continua en desarrollo, por lo cual es necesario
 incluir las siguiente funcionalidades:
 
@@ -38,7 +38,7 @@ incluir las siguiente funcionalidades:
 * Formateador de sintaxis JSON mejorada
 
 
-## Proyecciones y Alcance del proyecto
+## Proyecciones y Alcance del proyecto 🚀
 Este programa ha abarcado basicamente la perspectiva de un evaluador 
 de archivos JSON de tipo lexico, sin embargo seria importante
 ademas de interesante abarcar tambien el analisis sintactico y 
